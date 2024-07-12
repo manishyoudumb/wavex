@@ -10,7 +10,7 @@ const MeetingTypeList = () => {
       onClick={() => {}}>
         <div className='flex-center glassmorphism size-12 rounded-[10px] '>
           <Image src='/icons/add-meeting.svg'
-          alt='add meeting icon' width={25} height={25} />
+          alt='add meeting icon' width={27} height={27} />
         </div>
         <div >
 
