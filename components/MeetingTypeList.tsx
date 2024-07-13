@@ -44,7 +44,6 @@ const MeetingTypeList = () => {
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
       
-      <MeetingModal/>
     </section>
   )
 }
