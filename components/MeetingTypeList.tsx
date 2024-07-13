@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import HomeCard from './HomeCard'
 import { useRouter } from 'next/navigation'
+import MeetingModal from './MeetingModal'
 
 const MeetingTypeList = () => {
   const router = useRouter();
@@ -36,13 +37,14 @@ const MeetingTypeList = () => {
       />
 
       <HomeCard 
-        img='/icons/add-meeting.svg'
-        title='New Meeting'
-        description='Start an Instant Meeting'
+        img='/icons/join-meeting.svg'
+        title='Join Meeting'
+        description='Via Invitation Link'
         className='bg-fuchsia-500'
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
       
+      <MeetingModal/>
     </section>
   )
 }
