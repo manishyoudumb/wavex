@@ -9,6 +9,8 @@ const MeetingTypeList = () => {
   const router = useRouter();
   const [meetingState, setMeetingState] =
   useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>()
+
+  const createMeeting = () 
   return (
      <section className='grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4'>
       <HomeCard 
@@ -43,6 +45,18 @@ const MeetingTypeList = () => {
         className='bg-fuchsia-500'
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
+
+
+      <MeetingModal
+        isOpen={meetingState === 'isJoiningMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        title="Type the link here"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+
+      />
+      
       
     </section>
   )

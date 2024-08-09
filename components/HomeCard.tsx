@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface HomeCardProps {
-  className?: string;
+  className: string;
   img: string;
   title: string;
   description: string;
