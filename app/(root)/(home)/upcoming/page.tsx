@@ -1,13 +1,28 @@
-import React from 'react'
+import { Metadata } from 'next';
+import { ReactNode } from 'react';
 
-const page = () => {
+import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
+
+export const metadata: Metadata = {
+  title: 'YOOM',
+  description: 'A workspace for your team, powered by Stream Chat and Clerk.',
+};
+
+const RootLayout = ({ children }: Readonly<{children: ReactNode}>) => {
   return (
-    <section className='flex size-full flex-col gap-10 text-white'>
-    <h1 className='text-3xl font-bold'>
-      Upcoming Meets
-    </h1>
-  </section>
-  )
-}
+    <main className="relative">
+      <Navbar />
 
-export default page
+      <div className="flex">
+        <Sidebar />
+        
+        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14">
+          <div className="w-full">{children}</div>
+        </section>
+      </div>
+    </main>
+  );
+};
+
+export default RootLayout;
